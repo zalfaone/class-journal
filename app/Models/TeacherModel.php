@@ -11,6 +11,10 @@ class TeacherModel extends Model
 
     protected $table = 'teacher';
 
+    protected $fillable = [
+        'user_id',
+    ];
+
     public function journals()
     {
         return $this->belongsTo(JournalModel::class, 'teacher_id','id');

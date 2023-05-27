@@ -11,6 +11,10 @@ class ClassModel extends Model
 
     protected $table = 'class';
 
+    protected $fillable = [
+        'name',
+    ];
+
     public function students()
     {
         return $this->hasOne(StudentModel::class, 'class_id');

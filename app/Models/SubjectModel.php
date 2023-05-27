@@ -11,6 +11,11 @@ class SubjectModel extends Model
 
     protected $table = 'subjects';
 
+    protected $fillable = [
+        'teacher_id',
+        'name',
+    ];
+
     public function teachers()
     {
         return $this->belongsTo(TeacherModel::class, 'teacher_id', 'id');
