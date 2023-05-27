@@ -9,6 +9,8 @@ class ClassModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'class';
+
     public function students()
     {
         return $this->hasOne(StudentModel::class, 'class_id');
