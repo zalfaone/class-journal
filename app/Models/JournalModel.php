@@ -12,5 +12,10 @@ class JournalModel extends Model
     public function teachers(){
         return $this->hasMany(TeacherModel::class,'teacher_id','id');
     }
-    
+
+    public function class()
+    {
+        return $this->hasMany(ClassModel::class, 'class_id');
+    }
+
 }
