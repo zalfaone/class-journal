@@ -9,6 +9,8 @@ class SubjectModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'subjects';
+
     public function teachers()
     {
         return $this->belongsTo(TeacherModel::class, 'teacher_id', 'id');
