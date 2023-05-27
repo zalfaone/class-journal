@@ -11,6 +11,12 @@ class JournalModel extends Model
 
     protected $table = 'journals';
 
+    protected $fillable = [
+        'teacher_id',
+        'class_id',
+        'journal_entry',
+    ];
+
     public function teachers(){
         return $this->hasMany(TeacherModel::class,'teacher_id','id');
     }

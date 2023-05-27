@@ -11,6 +11,13 @@ class StudentModel extends Model
 
     protected $table = 'students';
 
+    protected $fillable = [
+        'user_id',
+        'nis',
+        'name',
+        'class_id',
+    ];
+
     public function users()
     {
         return $this->hasOne(User::class, 'user_id');
