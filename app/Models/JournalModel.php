@@ -9,6 +9,8 @@ class JournalModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'journals';
+
     public function teachers(){
         return $this->hasMany(TeacherModel::class,'teacher_id','id');
     }

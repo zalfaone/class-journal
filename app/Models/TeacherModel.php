@@ -9,6 +9,8 @@ class TeacherModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'teacher';
+
     public function journals()
     {
         return $this->belongsTo(JournalModel::class, 'teacher_id','id');
