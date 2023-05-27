@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Keadaan setelah login
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -25,4 +26,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    // Taruh students disini
+});
+
+Route::prefix('students')->name('students.')->group(function () {
+    Route::name('index')->get('index', \App\Http\Livewire\Students\Index::class);
 });
