@@ -26,11 +26,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    // Students
-    Route::prefix('students')->name('students.')->group(function () {
-        Route::get('/', \App\Http\Livewire\Students\Index::class)->name('index');
-        Route::get('/create', \App\Http\Livewire\Students\Create::class)->name('create');
-        Route::get('/detail', \App\Http\Livewire\Students\Detail::class)->name('detail');
+    // Student
+    Route::prefix('student')->name('student.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Student\Index::class)->name('index');
+        Route::get('/create', \App\Http\Livewire\Student\Create::class)->name('create');
+        Route::get('/detail', \App\Http\Livewire\Student\Detail::class)->name('detail');
     });
 
     // Class
