@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Keadaan setelah login
+// Hanya bisa diakses setelah login     
 Route::middleware([
     'auth:sanctum', config('jetstream.auth_session'), 'verified'
 ])->group(function () {
@@ -60,5 +60,25 @@ Route::middleware([
         Route::get('/', \App\Http\Livewire\Subject\Index::class)->name('index');
         Route::get('/create', \App\Http\Livewire\Subject\Create::class)->name('create');
         Route::get('/detail', \App\Http\Livewire\Subject\Detail::class)->name('detail');
+    });
+
+    // Role
+    Route::prefix('role')->name('role.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Role\Index::class)->name('index');
+        Route::get('/create', \App\Http\Livewire\Role\Create::class)->name('create');
+        Route::get('/detail', \App\Http\Livewire\Role\Detail::class)->name('detail');
+    });
+
+    // Permission
+    Route::prefix('permission')->name('permission.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Permission\Index::class)->name('index');
+        Route::get('/create', \App\Http\Livewire\Permission\Create::class)->name('create');
+    });
+
+    // User
+    Route::prefix('user')->name('user.')->group(function () {
+        Route::get('/', \App\Http\Livewire\User\Index::class)->name('index');
+        Route::get('/create', \App\Http\Livewire\User\Create::class)->name('create');
+        Route::get('/detail', \App\Http\Livewire\User\Detail::class)->name('detail');
     });
 });
